@@ -59,7 +59,7 @@ steps:
   inputs:
     sshEndpoint: 'nginx-dev-con'
     runOptions: 'commands'
-    commands: 'mv /tmp/.next/* /var/www/html'
+    commands: 'sudo mv /tmp/.next/* /var/www/html'
     interactiveSession: true
     readyTimeout: '20000'
     interactiveKeyboardAuthentication: true
