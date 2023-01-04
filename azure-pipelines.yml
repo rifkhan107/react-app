@@ -50,7 +50,7 @@ steps:
     runOptions: 'commands'
     commands: |
       unzip /tmp/.next.zip -d /tmp/.next
-      mv -f .next/BUILD_ID /var/www/html/BUILD_ID
+      # mv -f .next/BUILD_ID /var/www/html/BUILD_ID
     failOnStdErr: false
     readyTimeout: '20000'
   displayName: 'Unpack build artifact on ubuntu machine'
