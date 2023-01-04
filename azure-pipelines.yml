@@ -48,7 +48,7 @@ steps:
   inputs:
     sshEndpoint: 'nginx-dev-con'
     runOptions: 'commands'
-    commands: 'unzip /tmp/$(.next.BuildId).zip -d /tmp/.next'
+    commands: 'unzip /tmp/.next.zip -d /tmp/.next'
     failOnStdErr: false
   displayName: 'Unpack build artifact on ubuntu machine'
 
