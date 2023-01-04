@@ -48,8 +48,11 @@ steps:
   inputs:
     sshEndpoint: 'nginx-dev-con'
     runOptions: 'commands'
-    commands: 'unzip /tmp/.next.zip -d /tmp/.next'
+    commands: |
+      unzip /tmp/.next.zip -d /tmp/.next
+      mv -f .next/BUILD_ID /var/www/html/BUILD_ID
     failOnStdErr: false
+    readyTimeout: '20000'
   displayName: 'Unpack build artifact on ubuntu machine'
 
 - task: SSH@0
