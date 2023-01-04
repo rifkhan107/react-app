@@ -42,7 +42,6 @@ steps:
     sourceFolder: '$(Build.ArtifactStagingDirectory)'
     contents: '**'
     targetFolder: '/tmp'
-    readyTimeout: 
   displayName: 'Copy build artifact to Ubuntu machine'
 
 - task: SSH@0
@@ -51,7 +50,6 @@ steps:
     runOptions: 'commands'
     commands: 'unzip /tmp/$(Build.BuildId).zip -d /tmp/.next'
     failOnStdErr: false
-    readyTimeout: 
   displayName: 'Unpack build artifact on ubuntu machine'
 
 - task: SSH@0
@@ -59,5 +57,4 @@ steps:
     sshEndpoint: 'nginx-dev-con'
     runOptions: 'commands'
     commands: 'mv /tmp/.next/* /var/www/html'
-    readyTimeout: 
   displayName: 'Move build output to /var/www/html on Ubuntu machine'
