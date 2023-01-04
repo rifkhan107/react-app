@@ -62,4 +62,5 @@ steps:
     commands: 'mv /tmp/.next/* /var/www/html'
     interactiveSession: true
     readyTimeout: '20000'
+    interactiveKeyboardAuthentication: true
   displayName: 'Move build output to /var/www/html on Ubuntu machine'
