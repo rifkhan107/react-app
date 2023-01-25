@@ -38,7 +38,7 @@ steps:
 
 - task: CopyFilesOverSSH@0
   inputs:
-    sshEndpoint: 'nginx-dev-con'
+    sshEndpoint: 'dev-tv-web-admin'
     sourceFolder: '$(Build.ArtifactStagingDirectory)'
     contents: '**'
     targetFolder: '/tmp'
@@ -46,7 +46,7 @@ steps:
 
 - task: SSH@0
   inputs:
-    sshEndpoint: 'nginx-dev-con'
+    sshEndpoint: 'dev-tv-web-admin'
     runOptions: 'commands'
     commands: |
       unzip /tmp/.next.zip -d /tmp/.next
@@ -56,7 +56,7 @@ steps:
   displayName: 'Unpack build artifact on ubuntu machine'
 - task: SSH@0
   inputs:
-    sshEndpoint: 'nginx-dev-con'
+    sshEndpoint: 'dev-tv-web-admin'
     runOptions: 'commands'
     commands: |
       sudo rm -rf /var/www/html/*
