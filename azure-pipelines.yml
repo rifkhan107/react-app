@@ -54,12 +54,13 @@ steps:
     failOnStdErr: false
     readyTimeout: '20000'
   displayName: 'Unpack build artifact on ubuntu machine'
-
 - task: SSH@0
   inputs:
     sshEndpoint: 'nginx-dev-con'
     runOptions: 'commands'
-    commands: 'sudo mv /tmp/.next/* /var/www/html'
+    commands: |
+      sudo rm -rf /var/www/html/*
+      sudo mv /tmp/.next/* /var/www/html
     interactiveSession: true
     readyTimeout: '20000'
     interactiveKeyboardAuthentication: true
